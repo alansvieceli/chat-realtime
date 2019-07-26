@@ -11,9 +11,15 @@ app.set('io', io);
 
 //criar a conexão por websocket
 io.on('connection', (socket) => {
-  console.log("usuário conectou")
+  //console.log("usuário conectou")
 
   socket.on('disconnect', () => {
-    console.log("usuário desconectou")
+    //console.log("usuário desconectou")
+  })
+
+  socket.on('msgParaServidor', (data) => {
+    socket.emit('msgParaClient', data); //manda só pra mim
+
+    socket.broadcast.emit('msgParaClient', data); //manda pra todo mundo, menos pra mim
   })
 });
