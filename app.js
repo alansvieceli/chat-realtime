@@ -1,3 +1,8 @@
 const app = require('./config/server');
+const socketIO = require("socket.io");
 
-app.listen(80, () => { console.log("Servidor Escutando na porta 80!") });
+var server = app.listen(80, () => {
+  console.log("Servidor Escutando na porta 80!")
+});
+
+socketIO.listen(server);
