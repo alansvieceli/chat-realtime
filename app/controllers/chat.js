@@ -8,7 +8,11 @@ module.exports.iniciar = function(application, req, res) {
     return;
   }  
 
-  application.get('io').emit('msgParaClient', {apelido: dadosForm.apelido, mensagem: ' acabou de entrar'});
+  application
+    .get('io')
+    .emit(
+      'msgParaCliente', 
+      {apelido: dadosForm.apelido, mensagem: ' acabou de entrar'});
 
   res.render("chat", {dadosForm: dadosForm});
 }

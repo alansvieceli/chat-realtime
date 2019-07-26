@@ -18,8 +18,12 @@ io.on('connection', (socket) => {
   })
 
   socket.on('msgParaServidor', (data) => {
-    socket.emit('msgParaClient', data); //manda só pra mim
+    socket.emit('msgParaCliente', data); //manda só pra mim
+    socket.broadcast.emit('msgParaCliente', data); //manda pra todo mundo, menos pra mim
 
-    socket.broadcast.emit('msgParaClient', data); //manda pra todo mundo, menos pra mim
+    if (parseInt(data.apelido_atualizado_nos_clientes) == 0){
+      socket.emit('atualizarParticipantesParaCliente', {apelido: data.apelido}); //manda só pra mim
+      socket.broadcast.emit('atualizarParticipantesParaCliente', {apelido: data.apelido}); //manda pra todo mundo, menos pra mim
+    }
   })
 });
