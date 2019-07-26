@@ -7,6 +7,8 @@ const server = app.listen(80, () => {
 
 const io = socketIO.listen(server);
 
+app.set('io', io);
+
 //criar a conexão por websocket
 io.on('connection', (socket) => {
   console.log("usuário conectou")

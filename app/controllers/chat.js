@@ -7,5 +7,8 @@ module.exports.iniciar = function(application, req, res) {
     res.render("index", {validacao: errors.array()})
     return;
   }  
+
+  application.get('io').emit('msgParaClient', {apelido: dadosForm.apelido, mensagem: ' acabou de entrar'});
+
   res.render("chat");
 }
