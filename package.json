@@ -1,0 +1,26 @@
+{
+  "name": "chat-realtime",
+  "version": "1.0.0",
+  "description": "Multiroom Chat real-time com WebSocket",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alansvieceli/chat-realtime.git"
+  },
+  "author": "Alan Vieceli",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alansvieceli/chat-realtime/issues"
+  },
+  "homepage": "https://github.com/alansvieceli/chat-realtime#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "consign": "^0.1.6",
+    "ejs": "^2.6.2",
+    "express": "^4.17.1",
+    "express-validator": "^6.1.1"
+  }
+}
