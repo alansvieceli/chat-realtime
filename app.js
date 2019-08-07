@@ -18,6 +18,7 @@ io.on('connection', (socket) => {
   })
 
   socket.on('msgParaServidor', (data) => {
+
     socket.emit('msgParaCliente', data); //manda só pra mim
     socket.broadcast.emit('msgParaCliente', data); //manda pra todo mundo, menos pra mim
 

@@ -130,7 +130,7 @@
 
       socket.on('msgParaCliente', function(data){
 
-        if (!data.mensagem){
+        if (data.mensagem){          
           let html = "";
           html +=	"<div class=\"dialogo\">";
           html +=	"  <h4>" + data.apelido + "</h4>";
